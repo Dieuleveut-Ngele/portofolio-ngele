@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Titillium Web", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Titillium Web", sans-serif;
+
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  
+  --color-accent: #E11D48;
+  --color-accent-muted: rgba(225, 29, 72, 0.1);
+  --color-surface: rgba(15, 15, 15, 0.8);
+  --color-border-red: rgba(225, 29, 72, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent/30;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-surface backdrop-blur-xl border border-white/5 rounded-2xl;
+  }
+  
+  .glass-card-red {
+    @apply bg-surface backdrop-blur-xl border border-accent/20 rounded-2xl;
+  }
+
+  .text-gradient-red {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-red-400;
+  }
+
+  .plexus-bg {
+    background-image: url('https://www.transparenttextures.com/patterns/black-thread.png'), 
+                      radial-gradient(circle at 50% 50%, rgba(225, 29, 72, 0.05) 0%, transparent 50%);
+    background-color: #000000;
+  }
+
+  .nav-active {
+    @apply bg-accent/10 text-accent border-b-2 border-accent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E11D48;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BE123C;
+}
+
+/* Plexus Animation Approximation */
+.plexus-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+}
