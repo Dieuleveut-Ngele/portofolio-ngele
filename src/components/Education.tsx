@@ -7,7 +7,7 @@ const educationData = [
   {
     title: "Bac +3 en Administration Réseau et Base de Données",
     institution: "ESMICOM",
-    img: "assets/imaages/esmicom.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/esmicom_xqdcja.png",
     type: "academic",
     description: "Spécialisation dans la conception et l'administration d'infrastructures réseaux et de systèmes de gestion de bases de données complexes.",
     color: "from-blue-500 to-cyan-500"
@@ -15,7 +15,7 @@ const educationData = [
   {
     title: "Bac +2 en Développement Web Mobile",
     institution: "Kadea Academy (Simplon)",
-    img: "assets/imaages/kadeaacademy.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/kadeaacademy_fviqyn.png",
     type: "academic",
     description: "Formation intensive axée sur les technologies web modernes et le développement d'applications mobiles performantes.",
     color: "from-purple-500 to-pink-500"
@@ -23,7 +23,7 @@ const educationData = [
   {
     title: "Certification en Intelligence Artificielle",
     institution: "IBM SkillsBuild",
-    img: "assets/imaages/ibm.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Apprentissage des concepts fondamentaux de l'IA, du machine learning et de l'implémentation de solutions intelligentes.",
     color: "from-accent to-red-500"
@@ -31,7 +31,7 @@ const educationData = [
   {
     title: "Certification \"Certified Data Scientist with Python\"",
     institution: "IBM",
-    img: "assets/imaages/ibm.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Maîtrise de l'analyse de données, de la visualisation et des outils de data science utilisant l'écosystème Python.",
     color: "from-green-500 to-emerald-500"

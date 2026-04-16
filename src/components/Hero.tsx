@@ -94,7 +94,7 @@ export const Hero = () => {
                 <motion.img 
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.4 }}
-                  src="assets/imaages/profil.png" 
+                  src="https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363788/Portofolio/profil_hy3dbi.png" 
                   alt="Design & Code" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

@@ -32,7 +32,7 @@ export const Profile = () => {
               <motion.img
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                src="assets/imaages/dlvngele.png"
+                src="https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363785/Portofolio/dlvngele_m4vbnq.png"
                 alt="Dieuleveut Ngele"
                 className="w-full h-full object-cover object-top grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
                 referrerPolicy="no-referrer"
