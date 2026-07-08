@@ -75,3 +75,46 @@
   pointer-events: none;
   background-image: url('https://grainy-gradients.vercel.app/noise.svg');
 }
+
+
+/* ── Optimisation scroll mobile ────────────────────────────────────────────── */
+
+/* Hardware acceleration sur tous les éléments animés */
+[class*="animate-"],
+[class*="motion"] {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Sur mobile : supprime les effets blur très lourds (backdrop-filter) */
+@media (max-width: 1024px) {
+  .glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Supprime les blobs de background floutés (blur-[150px], blur-[200px], etc.) */
+  [class*="blur-["] {
+    display: none !important;
+  }
+
+  /* Désactive les animations continues (spinning rings, ping, pulse) */
+  .animate-\[spin_20s_linear_infinite\],
+  .animate-\[spin_15s_linear_infinite_reverse\],
+  .animate-\[spin_25s_linear_infinite\] {
+    animation: none !important;
+  }
+}
+
+/* Smooth scroll natif optimisé */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overscroll-behavior-y: none;
+}

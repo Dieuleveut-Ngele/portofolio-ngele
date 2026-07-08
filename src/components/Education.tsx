@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const educationData = [
@@ -10,7 +10,8 @@ const educationData = [
     img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/esmicom_xqdcja.png",
     type: "academic",
     description: "Spécialisation dans la conception et l'administration d'infrastructures réseaux et de systèmes de gestion de bases de données complexes.",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
+    verifyUrl: null
   },
   {
     title: "Bac +2 en Développement Web Mobile",
@@ -18,23 +19,44 @@ const educationData = [
     img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/kadeaacademy_fviqyn.png",
     type: "academic",
     description: "Formation intensive axée sur les technologies web modernes et le développement d'applications mobiles performantes.",
-    color: "from-purple-500 to-pink-500"
+    color: "from-purple-500 to-pink-500",
+    verifyUrl: null
   },
   {
-    title: "Certification en Intelligence Artificielle",
-    institution: "IBM SkillsBuild",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
-    type: "certification",
-    description: "Apprentissage des concepts fondamentaux de l'IA, du machine learning et de l'implémentation de solutions intelligentes.",
-    color: "from-accent to-red-500"
-  },
-  {
-    title: "Certification \"Certified Data Scientist with Python\"",
+    title: "Artificial Intelligence Fundamentals",
     institution: "IBM",
     img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
-    description: "Maîtrise de l'analyse de données, de la visualisation et des outils de data science utilisant l'écosystème Python.",
-    color: "from-green-500 to-emerald-500"
+    description: "Maîtrise des concepts fondamentaux de l'intelligence artificielle : machine learning, deep learning et IA éthique.",
+    color: "from-yellow-500 to-orange-500",
+    verifyUrl: "https://www.credly.com/badges/b815ec55-9891-4cde-a832-fd7ea775c484"
+  },
+  {
+    title: "Data Visualization with Python",
+    institution: "IBM",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    type: "certification",
+    description: "Création de visualisations de données avancées avec Matplotlib, Seaborn et Folium pour l'analyse et la communication de données.",
+    color: "from-sky-500 to-blue-500",
+    verifyUrl: null
+  },
+  {
+    title: "Data Analysis with Python",
+    institution: "IBM",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    type: "certification",
+    description: "Analyse de données avec Pandas, NumPy et Scipy : nettoyage, exploration, corrélation et modélisation prédictive.",
+    color: "from-teal-500 to-cyan-500",
+    verifyUrl: null
+  },
+  {
+    title: "Applied Data Science with Python",
+    institution: "IBM",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    type: "certification",
+    description: "Application concrète de la data science : pipelines de données, machine learning appliqué et projets réels avec l'écosystème Python.",
+    color: "from-violet-500 to-purple-500",
+    verifyUrl: "https://www.credly.com/badges/b31b5d09-b69a-4685-ba8f-6d66865180a0/public_url"
   }
 ];
 
@@ -54,8 +76,8 @@ export const Education = () => {
             <GraduationCap size={14} />
             {t('education.badge')}
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,25 +98,25 @@ export const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card p-8 group hover:border-accent/30 transition-all duration-500 relative overflow-hidden"
+              className="glass-card p-8 group hover:border-accent/30 transition-all duration-500 relative overflow-hidden flex flex-col"
             >
               {/* Background Gradient Accent */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.color} opacity-5 blur-3xl group-hover:opacity-10 transition-opacity`} />
-              
-              <div className="relative z-10">
+
+              <div className="relative z-10 flex flex-col flex-1">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex gap-4">
-                    <div className={`w-16 h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-accent/20 transition-colors`}>
-                      <img 
-                        src={item.img} 
-                        alt={item.title} 
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-accent/20 transition-colors">
+                      <img
+                        src={item.img}
+                        alt={item.title}
                         className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
                   <div className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border ${
-                    item.type === 'academic' 
-                      ? 'border-blue-500/30 bg-blue-500/10 text-blue-400' 
+                    item.type === 'academic'
+                      ? 'border-blue-500/30 bg-blue-500/10 text-blue-400'
                       : 'border-accent/30 bg-accent/10 text-accent'
                   }`}>
                     {item.type === 'academic' ? t('education.diploma') : t('education.cert')}
@@ -107,11 +129,24 @@ export const Education = () => {
                 <p className="text-accent font-bold text-sm mb-4">
                   {item.institution}
                 </p>
-                <p className="text-foreground/60 text-sm leading-relaxed">
+                <p className="text-foreground/60 text-sm leading-relaxed flex-1">
                   {item.description}
                 </p>
+
+                {/* Verify button — only shown when a link exists */}
+                {item.verifyUrl && (
+                  <a
+                    href={item.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 self-start px-4 py-2 rounded-lg border border-accent/30 bg-accent/5 text-accent text-xs font-bold uppercase tracking-wider hover:bg-accent hover:text-white hover:border-accent transition-all duration-300"
+                  >
+                    <ExternalLink size={12} />
+                    Vérifier le badge
+                  </a>
+                )}
               </div>
-              
+
               {/* Bottom Decorative Line */}
               <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${item.color} w-0 group-hover:w-full transition-all duration-700`} />
             </motion.div>
