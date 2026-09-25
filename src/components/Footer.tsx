@@ -3,12 +3,13 @@ import { motion } from 'motion/react';
 import { Linkedin, Github, Twitter, Instagram, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+// Les liens sans URL vérifiée restent '#' en attendant les vraies URLs.
 const socials = [
-  { icon: Linkedin, href: '#' },
-  { icon: Github, href: '#' },
-  { icon: Twitter, href: '#' },
-  { icon: Instagram, href: '#' },
-  { icon: Globe, href: '#' },
+  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/Dieuleveut-Ngele', label: 'GitHub' },
+  { icon: Twitter, href: '#', label: 'Twitter / X' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Globe, href: '#', label: 'Site web' },
 ];
 
 export const Footer = () => {
@@ -19,10 +20,14 @@ export const Footer = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col items-center gap-8">
           <div className="flex items-center gap-4">
-            {socials.map((social, index) => (
+            {socials.map((social) => (
               <motion.a
-                key={index}
+                key={social.label}
                 href={social.href}
+                aria-label={social.label}
+                {...(social.href.startsWith('http')
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-foreground/60 hover:text-accent hover:border-accent transition-all duration-300"

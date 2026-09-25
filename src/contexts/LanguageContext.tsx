@@ -19,6 +19,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   }, []);
 
+  // SEO/accessibilité : synchronise l'attribut lang du document
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const toggleLanguage = () => {
     const newLang = language === 'fr' ? 'en' : 'fr';
     setLanguage(newLang);

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111111" />
+      <stop offset="1" stop-color="#1a0a0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)" />
+  <circle cx="1050" cy="120" r="220" fill="#E11D48" opacity="0.08" />
+  <circle cx="120" cy="650" r="180" fill="#E11D48" opacity="0.06" />
+  <rect x="480" y="250" width="240" height="160" rx="24" fill="none" stroke="#E11D48" stroke-width="6" opacity="0.9" />
+  <path d="M480 312 h240" stroke="#E11D48" stroke-width="6" opacity="0.9" />
+  <circle cx="655" cy="360" r="14" fill="#E11D48" />
+  <text x="600" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#ffffff">Prelevement Wallet</text>
+  <text x="600" y="552" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#9ca3af">Aperçu à venir</text>
+</svg>

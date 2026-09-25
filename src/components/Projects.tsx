@@ -22,8 +22,8 @@ const projects = [
       "Module de reporting et de gestion des prélèvements wallets intégré à Flash POS. Permet le suivi en temps réel des transactions, la validation des prélèvements planifiés, le filtrage multi-devises (CDF, USD, FCN) et l'export des rapports d'exécution.",
     tags: ["React", "Node.js", "Express", "PostgreSQL", "REST API"],
     category: "Fintech & Finance",
-    // Dépose l'image dans public/assets/prelevement-wallet.png ou upload sur Cloudinary
-    image: "/assets/prelevement-wallet.png",
+    // Placeholder local en attendant la capture réelle (remplacer par un .png du même nom)
+    image: "/assets/prelevement-wallet.svg",
     demo: "#",
     code: "#",
   },
@@ -34,7 +34,7 @@ const projects = [
     tags: ["React", "Next.js", "Tailwind", "Algolia Search"],
     category: "Outils Internes",
     // Dépose l'image dans public/assets/doc-utilisateur.png ou upload sur Cloudinary
-    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1783506690/Portofolio/docuser_f50fel.png",
+    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_1200/v1783506690/Portofolio/docuser_f50fel.png",
     demo: "#",
     code: "#",
   },
@@ -45,7 +45,7 @@ const projects = [
     tags: ["Next.js", "React", "Tailwind", "Framer Motion"],
     category: "Site Vitrine",
     // Dépose l'image dans public/assets/thelab.png ou upload sur Cloudinary
-    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1783506687/Portofolio/thelab_h9azyu.png",
+    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_1200/v1783506687/Portofolio/thelab_h9azyu.png",
     demo: "#",
     code: "#",
   },
@@ -56,7 +56,7 @@ const projects = [
     tags: ["React", "Vite", "Tailwind", "i18n"],
     category: "Site Vitrine",
     // Dépose l'image dans public/assets/glibox.png ou upload sur Cloudinary
-    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1783506690/Portofolio/glibox_ho6z6m.png",
+    image: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_1200/v1783506690/Portofolio/glibox_ho6z6m.png",
     demo: "#",
     code: "#",
   },
@@ -126,6 +126,10 @@ export const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />

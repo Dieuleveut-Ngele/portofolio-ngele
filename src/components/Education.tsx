@@ -7,7 +7,7 @@ const educationData = [
   {
     title: "Bac +3 en Administration Réseau et Base de Données",
     institution: "ESMICOM",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/esmicom_xqdcja.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/esmicom_xqdcja.png",
     type: "academic",
     description: "Spécialisation dans la conception et l'administration d'infrastructures réseaux et de systèmes de gestion de bases de données complexes.",
     color: "from-blue-500 to-cyan-500",
@@ -16,7 +16,7 @@ const educationData = [
   {
     title: "Bac +2 en Développement Web Mobile",
     institution: "Kadea Academy (Simplon)",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/kadeaacademy_fviqyn.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/kadeaacademy_fviqyn.png",
     type: "academic",
     description: "Formation intensive axée sur les technologies web modernes et le développement d'applications mobiles performantes.",
     color: "from-purple-500 to-pink-500",
@@ -25,7 +25,7 @@ const educationData = [
   {
     title: "Artificial Intelligence Fundamentals",
     institution: "IBM",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Maîtrise des concepts fondamentaux de l'intelligence artificielle : machine learning, deep learning et IA éthique.",
     color: "from-yellow-500 to-orange-500",
@@ -34,7 +34,7 @@ const educationData = [
   {
     title: "Data Visualization with Python",
     institution: "IBM",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Création de visualisations de données avancées avec Matplotlib, Seaborn et Folium pour l'analyse et la communication de données.",
     color: "from-sky-500 to-blue-500",
@@ -43,7 +43,7 @@ const educationData = [
   {
     title: "Data Analysis with Python",
     institution: "IBM",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Analyse de données avec Pandas, NumPy et Scipy : nettoyage, exploration, corrélation et modélisation prédictive.",
     color: "from-teal-500 to-cyan-500",
@@ -52,7 +52,7 @@ const educationData = [
   {
     title: "Applied Data Science with Python",
     institution: "IBM",
-    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/v1776363706/Portofolio/ibm_a2xpkr.png",
+    img: "https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_200/v1776363706/Portofolio/ibm_a2xpkr.png",
     type: "certification",
     description: "Application concrète de la data science : pipelines de données, machine learning appliqué et projets réels avec l'écosystème Python.",
     color: "from-violet-500 to-purple-500",
@@ -109,7 +109,11 @@ export const Education = () => {
                     <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-accent/20 transition-colors">
                       <img
                         src={item.img}
-                        alt={item.title}
+                        alt={`Logo ${item.institution}`}
+                        width={64}
+                        height={64}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>

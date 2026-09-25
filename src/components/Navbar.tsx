@@ -127,6 +127,9 @@ export const Navbar = () => {
             <img
               src={language === 'fr' ? 'https://flagcdn.com/fr.svg' : 'https://flagcdn.com/gb.svg'}
               alt={language === 'fr' ? 'Français' : 'English'}
+              width={20}
+              height={20}
+              decoding="async"
               className="w-5 h-5 rounded-full object-cover relative z-10 transition-transform group-hover:scale-110 border border-white/20 shadow-md"
             />
             <span className="relative z-10 text-[10px] font-bold uppercase tracking-widest">
@@ -151,6 +154,9 @@ export const Navbar = () => {
             <img
               src={language === 'fr' ? 'https://flagcdn.com/fr.svg' : 'https://flagcdn.com/gb.svg'}
               alt={language === 'fr' ? 'Français' : 'English'}
+              width={20}
+              height={20}
+              decoding="async"
               className="w-5 h-5 rounded-full object-cover border border-white/20"
             />
             <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/70">

@@ -84,9 +84,13 @@ export const Skills = () => {
                 className="glass-card p-6 flex flex-col items-center justify-center gap-4 group cursor-default"
               >
                 <div className="w-12 h-12 relative">
-                  <img 
-                    src={skill.icon} 
-                    alt={skill.name} 
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain transition-transform group-hover:scale-110 group-hover:rotate-6"
                     referrerPolicy="no-referrer"
                   />
