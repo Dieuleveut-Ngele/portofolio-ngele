@@ -118,3 +118,54 @@ html {
 body {
   overscroll-behavior-y: none;
 }
+
+/* ── Background animé — versions GPU (transform/opacity uniquement) ───────── */
+
+/* Dérive du plexus : boucle sans couture car le pattern fait 200px */
+.plexus-drift {
+  animation: plexus-drift 60s linear infinite;
+  will-change: transform;
+}
+
+@keyframes plexus-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(200px, 200px, 0); }
+}
+
+.blob-pulse-a,
+.blob-pulse-b {
+  will-change: transform, opacity;
+}
+
+.blob-pulse-a {
+  animation: blob-pulse-a 8s ease-in-out infinite;
+}
+
+.blob-pulse-b {
+  animation: blob-pulse-b 10s ease-in-out infinite;
+}
+
+@keyframes blob-pulse-a {
+  0%, 100% { transform: scale(1); opacity: 0.05; }
+  50% { transform: scale(1.2); opacity: 0.08; }
+}
+
+@keyframes blob-pulse-b {
+  0%, 100% { transform: scale(1.2); opacity: 0.05; }
+  50% { transform: scale(1); opacity: 0.08; }
+}
+
+/* ── Accessibilité : réduction des animations ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

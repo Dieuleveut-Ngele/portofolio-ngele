@@ -136,7 +136,7 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* ── MOBILE navbar (< md) ────────────────────────────────────────────── */}
+      {/* ── MOBILE navbar (< md) ──────────────────────────────────────────── */}
       <div id="mobile-nav" className="fixed top-0 left-0 right-0 z-[100] md:hidden">
 
         {/* Barre supérieure mobile */}
