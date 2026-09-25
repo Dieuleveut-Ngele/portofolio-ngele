@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
+import { cn } from '../lib/utils';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useIsMobile } from '../hook/useIsMobile';
 
@@ -8,6 +9,24 @@ export const Hero = () => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile(); // Fix 3
   const cvUrl = language === 'fr' ? '/CV-Dieuleveut-Ngele-FR.pdf' : '/CV-Dieuleveut-Ngele-EN.pdf';
+
+  // Sur écran tactile (pas de survol possible), la main 👋 apparaît toute seule :
+  // 2 s après l'arrivée sur la page, puis en cycle (4 s visible / 4 s cachée).
+  // Sur desktop, le group-hover CSS garde le comportement d'origine.
+  const [handVisible, setHandVisible] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(hover: hover)').matches) return;
+    let interval: number | undefined;
+    const start = window.setTimeout(() => {
+      setHandVisible(true);
+      interval = window.setInterval(() => setHandVisible((v) => !v), 4000);
+    }, 2000);
+    return () => {
+      window.clearTimeout(start);
+      if (interval) window.clearInterval(interval);
+    };
+  }, []);
 
   const imageContent = (
     <motion.div
@@ -37,6 +56,7 @@ export const Hero = () => {
       >
         <motion.img
           whileHover={{ scale: 1.1, rotate: 5 }}
+          animate={handVisible ? { scale: 1.1, rotate: 5 } : { scale: 1, rotate: 0 }}
           transition={{ duration: 0.4 }}
           src="https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_800/v1776363788/Portofolio/profil_hy3dbi.png"
           alt="Portrait de Dieuleveut Ngele"
@@ -48,9 +68,19 @@ export const Hero = () => {
           referrerPolicy="no-referrer"
         />
 
-        {/* Waving Hand Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pointer-events-none">
-          <div className="bg-black/40 backdrop-blur-md rounded-full p-4 border border-white/20 transform scale-50 group-hover:scale-100 transition-all duration-300">
+        {/* Waving Hand Overlay — hover sur desktop, cycle automatique sur tactile */}
+        <div
+          className={cn(
+            'absolute inset-0 flex items-center justify-center transition-all duration-300 z-30 pointer-events-none',
+            handVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+          )}
+        >
+          <div
+            className={cn(
+              'bg-black/40 backdrop-blur-md rounded-full p-4 border border-white/20 transition-all duration-300',
+              handVisible ? 'scale-100' : 'scale-50 group-hover:scale-100'
+            )}
+          >
             <motion.div
               animate={{ rotate: [0, 20, -10, 20, -10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}

@@ -11,7 +11,6 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 // après le chunk principal → time-to-interactive plus rapide, ancres préservées.
 const Education = lazy(() => import('./components/Education').then((m) => ({ default: m.Education })));
 const Experience = lazy(() => import('./components/Experience').then((m) => ({ default: m.Experience })));
-const Projects = lazy(() => import('./components/Projects').then((m) => ({ default: m.Projects })));
 const News = lazy(() => import('./components/News').then((m) => ({ default: m.News })));
 const Skills = lazy(() => import('./components/Skills').then((m) => ({ default: m.Skills })));
 const Contact = lazy(() => import('./components/Contact').then((m) => ({ default: m.Contact })));
@@ -29,7 +28,6 @@ export default function App() {
         <Suspense fallback={null}>
           <Education />
           <Experience />
-          <Projects />
           <News />
           <Skills />
           <Contact />
