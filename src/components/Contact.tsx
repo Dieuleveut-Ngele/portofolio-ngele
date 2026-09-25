@@ -6,7 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const contactMethods = [
   { name: 'WhatsApp', desc: 'Disponible pour des échanges rapides', icon: MessageCircle, color: 'text-green-500', href: 'https://wa.me/243824045533' },
   { name: 'Email', desc: 'Pour toute demande professionnelle', icon: Mail, color: 'text-red-500', href: 'mailto:Dieuleveutngele@gmail.com' },
-  { name: 'LinkedIn', desc: 'Connectons-nous professionnellement', icon: Linkedin, color: 'text-blue-500', href: '#' },
+  { name: 'LinkedIn', desc: 'Connectons-nous professionnellement', icon: Linkedin, color: 'text-blue-500', href: 'https://www.linkedin.com/in/dieuleveut-ngele-767889282/' },
   { name: 'Instagram', desc: 'Suivez mon actualité', icon: Instagram, color: 'text-pink-500', href: '#' },
 ];
 
@@ -44,6 +44,9 @@ export const Contact = () => {
               <motion.a
                 key={method.name}
                 href={method.href}
+                {...(method.href.startsWith('http')
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}

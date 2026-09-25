@@ -5,8 +5,9 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useIsMobile } from '../hook/useIsMobile';
 
 export const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const isMobile = useIsMobile(); // Fix 3
+  const cvUrl = language === 'fr' ? '/CV-Dieuleveut-Ngele-FR.pdf' : '/CV-Dieuleveut-Ngele-EN.pdf';
 
   const imageContent = (
     <motion.div
@@ -158,14 +159,16 @@ export const Hero = () => {
                 </div>
                 <p className="text-xs text-foreground/50">{t('hero.download_desc')}</p>
               </div>
-              <motion.button
+              <motion.a
+                href={cvUrl}
+                download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-8 py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.15)] hover:shadow-[0_0_25px_rgba(225,29,72,0.4)]"
               >
                 <Download size={18} />
                 {t('hero.download')}
-              </motion.button>
+              </motion.a>
             </div>
           </div>
 

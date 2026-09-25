@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 // Les liens sans URL vérifiée restent '#' en attendant les vraies URLs.
 const socials = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/dieuleveut-ngele-767889282/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/Dieuleveut-Ngele', label: 'GitHub' },
   { icon: Twitter, href: '#', label: 'Twitter / X' },
   { icon: Instagram, href: '#', label: 'Instagram' },

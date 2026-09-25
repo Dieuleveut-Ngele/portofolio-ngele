@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>CV — Dieuleveut Ngele (FR)</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+  header { border-bottom: 2.5px solid #E11D48; padding-bottom: 8px; margin-bottom: 12px; }
+  h1 { font-size: 21pt; font-weight: 800; letter-spacing: 0.5px; color: #111; }
+  .jobtitle { font-size: 11pt; font-weight: 700; color: #E11D48; margin-top: 2px; }
+  .contact { font-size: 8.6pt; color: #444; margin-top: 5px; }
+  .contact span + span::before { content: "  ·  "; color: #E11D48; font-weight: 700; }
+  h2 {
+    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #111; border-left: 4px solid #E11D48; padding-left: 8px;
+    margin: 13px 0 6px;
+  }
+  .exp-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; }
+  .exp-role { font-size: 10pt; font-weight: 700; color: #111; }
+  .exp-org { font-size: 9.6pt; font-weight: 700; color: #E11D48; }
+  .exp-date { font-size: 8.6pt; color: #555; white-space: nowrap; font-style: italic; }
+  ul { margin: 3px 0 4px 16px; }
+  li { margin-bottom: 2.5px; }
+  li::marker { color: #E11D48; }
+  .skills p { margin-bottom: 3px; }
+  .skills b { color: #111; }
+  .edu-item { margin-bottom: 5px; }
+  .edu-item .degree { font-weight: 700; }
+  .edu-item .school { color: #444; }
+  .edu-item .mention { color: #E11D48; font-weight: 700; }
+  .cert-grid li { margin-bottom: 2px; }
+  .badge-note { color: #555; font-style: italic; font-size: 8.4pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dieuleveut Ngele</h1>
+  <div class="jobtitle">Développeur Backend Java / Full-Stack — Intégration d'API &amp; Bases de données</div>
+  <div class="contact">
+    <span>Kinshasa, RDC</span>
+    <span>+243 824 045 533</span>
+    <span>dieuleveutngele@gmail.com</span>
+    <span>github.com/Dieuleveut-Ngele</span>
+    <span>linkedin.com/in/dieuleveut-ngele-767889282</span>
+  </div>
+</header>
+
+<section>
+  <h2>Profil professionnel</h2>
+  <p>
+    Développeur full-stack avec plus de 2 ans d'expérience, spécialisé en intégration d'API de
+    transfert d'argent (RIA, MoneyGram, Western Union) et en développement backend Java / Java EE.
+    Solide pratique des tests et de la documentation d'API avec Postman, ainsi que des bases de
+    données Oracle, PostgreSQL et SQL Server.
+  </p>
+</section>
+
+<section class="skills">
+  <h2>Compétences techniques</h2>
+  <p><b>Backend :</b> Java, Java EE, Node.js, Express, WildFly, API REST</p>
+  <p><b>Frontend :</b> React, Angular, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS</p>
+  <p><b>Bases de données :</b> Oracle, PostgreSQL, SQL Server, MySQL, MongoDB, modélisation Mérise</p>
+  <p><b>Intégration &amp; tests API :</b> Postman, JSON, XML, OAuth, documentation technique</p>
+  <p><b>Outils :</b> Git, GitHub, Bitbucket, Figma, méthodes Agile/Scrum</p>
+</section>
+
+<section>
+  <h2>Expérience professionnelle</h2>
+
+  <div class="exp-head">
+    <div>
+      <span class="exp-role">Développeur Full-Stack — Intégration d'API</span><br />
+      <span class="exp-org">Flash International, Kinshasa</span>
+    </div>
+    <span class="exp-date">juin 2024 – aujourd'hui</span>
+  </div>
+  <ul>
+    <li><b>RIA Money Transfer :</b> intégration du parcours d'envoi complet — authentification OAuth, récupération des pays autorisés, méthodes de livraison, payout partners, Amounts &amp; Requirements, Draft Order, validations des données de transaction ; parcours Cash Pickup, Bank Deposit et Mobile Wallet.</li>
+    <li><b>Flash Scan :</b> conception et intégration d'une solution interne centralisée de scan de pièces d'identité, réutilisée dans les parcours MoneyGram, Western Union, RIA, Mukuru et Taptap Send — remplace l'ancien mécanisme et améliore l'expérience opérateur.</li>
+    <li>Création et maintenance des collections Postman et des tests des API partenaires : RIA, Western Union, MoneyGram, Taptap Send, TerraPay, ZeePay, Swiss Remit, Mukuru, Mobile Money.</li>
+    <li>Rédaction de la documentation technique des API partenaires.</li>
+    <li>Développement d'une application interne de documentation utilisateurs (Angular, TypeScript, SCSS).</li>
+    <li>Conception de maquettes et prototypes Figma ; refonte UX de l'application mobile FlashApp.</li>
+  </ul>
+
+  <div class="exp-head">
+    <div>
+      <span class="exp-role">Développeur Full-Stack (projet)</span><br />
+      <span class="exp-org">Agro Connect, Kinshasa</span>
+    </div>
+    <span class="exp-date">oct. 2024 – nov. 2024</span>
+  </div>
+  <ul>
+    <li>Plateforme web facilitant les achats et la mise en relation des acteurs de la chaîne de valeur agricole (React, JavaScript, Tailwind CSS, MongoDB).</li>
+  </ul>
+
+  <div class="exp-head">
+    <div>
+      <span class="exp-role">Développeur — Chatbot conversationnel</span><br />
+      <span class="exp-org">Muzikin Distribution, Kinshasa</span>
+    </div>
+    <span class="exp-date">janv. 2024 – févr. 2024</span>
+  </div>
+  <ul>
+    <li>Conception et implémentation d'un chatbot conversationnel (Botpress, Stack AI) avec configuration des flux pour une interaction fluide.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Formations</h2>
+  <div class="edu-item">
+    <span class="degree">Bac +3 — Administration Réseaux &amp; Gestion de Bases de Données</span><br />
+    <span class="school">ESMICOM, Kinshasa · 2019 – 2022</span> · <span class="mention">Mention : Distinction</span>
+  </div>
+  <div class="edu-item">
+    <span class="degree">Bac +2 — Développement Web &amp; Mobile</span><br />
+    <span class="school">Kadea Academy (Simplon), Kinshasa · 2023 – 2024</span>
+  </div>
+  <div class="edu-item">
+    <span class="degree">Management des projets</span><br />
+    <span class="school">Phila-Cité d'Exaucement, Kinshasa · 2023</span>
+  </div>
+</section>
+
+<section>
+  <h2>Certifications — IBM</h2>
+  <ul class="cert-grid">
+    <li>Artificial Intelligence Fundamentals <span class="badge-note">(badge vérifiable — Credly)</span></li>
+    <li>Applied Data Science with Python <span class="badge-note">(badge vérifiable — Credly)</span></li>
+    <li>Data Analysis with Python</li>
+    <li>Data Visualization with Python</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Langues</h2>
+  <p>Français — professionnel complet · Anglais — technique (lecture et rédaction de documentation) · Lingala — langue maternelle</p>
+</section>
+
+</body>
+</html>
