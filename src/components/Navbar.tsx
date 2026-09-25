@@ -15,7 +15,7 @@ export const Navbar = () => {
     { name: 'nav.home', href: '#home', icon: Home },
     { name: 'nav.profile', href: '#profile', icon: User },
     { name: 'nav.education', href: '#education', icon: GraduationCap },
-    { name: 'nav.projects', href: '#projects', icon: Briefcase },
+    { name: 'nav.projects', href: '#experience', icon: Briefcase },
     { name: 'nav.news', href: '#news', icon: FileText },
     { name: 'nav.contact', href: '#contact', icon: Mail },
   ] as const;
