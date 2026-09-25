@@ -37,7 +37,7 @@ export const experiences: ExperienceItem[] = [
         'Cash Pickup, Bank Deposit and Mobile Wallet flows',
       ],
     },
-    tags: ['REST API', 'OAuth', 'Postman', 'JSON', 'Java', 'JavaScript'],
+    tags: ['REST API', 'OAuth', 'Postman', 'JSON', 'JavaScript', 'TypeScript'],
   },
   {
     id: 'flashscan',

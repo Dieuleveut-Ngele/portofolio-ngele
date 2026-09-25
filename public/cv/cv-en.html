@@ -4,147 +4,209 @@
 <meta charset="UTF-8" />
 <title>Resume — Dieuleveut Ngele (EN)</title>
 <style>
-  @page { size: A4; margin: 14mm 16mm; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  html, body { width: 210mm; }
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 9.6pt;
-    line-height: 1.42;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.4;
     color: #1a1a1a;
-    background: #ffffff;
+    background: #fff;
+    display: flex;
+    min-height: 297mm;
   }
-  header { border-bottom: 2.5px solid #E11D48; padding-bottom: 8px; margin-bottom: 12px; }
-  h1 { font-size: 21pt; font-weight: 800; letter-spacing: 0.5px; color: #111; }
-  .jobtitle { font-size: 11pt; font-weight: 700; color: #E11D48; margin-top: 2px; }
-  .contact { font-size: 8.6pt; color: #444; margin-top: 5px; }
-  .contact span + span::before { content: "  ·  "; color: #E11D48; font-weight: 700; }
-  h2 {
-    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px;
-    color: #111; border-left: 4px solid #E11D48; padding-left: 8px;
-    margin: 13px 0 6px;
+
+  /* ── Sidebar ─────────────────────────────── */
+  .sidebar {
+    width: 68mm;
+    flex-shrink: 0;
+    background: #161616;
+    color: #e5e5e5;
+    padding: 9mm 7mm;
+    display: flex;
+    flex-direction: column;
   }
-  .exp-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; }
-  .exp-role { font-size: 10pt; font-weight: 700; color: #111; }
-  .exp-org { font-size: 9.6pt; font-weight: 700; color: #E11D48; }
-  .exp-date { font-size: 8.6pt; color: #555; white-space: nowrap; font-style: italic; }
-  ul { margin: 3px 0 4px 16px; }
-  li { margin-bottom: 2.5px; }
-  li::marker { color: #E11D48; }
-  .skills p { margin-bottom: 3px; }
-  .skills b { color: #111; }
-  .edu-item { margin-bottom: 5px; }
-  .edu-item .degree { font-weight: 700; }
-  .edu-item .school { color: #444; }
-  .edu-item .mention { color: #E11D48; font-weight: 700; }
-  .cert-grid li { margin-bottom: 2px; }
-  .badge-note { color: #555; font-style: italic; font-size: 8.4pt; }
+  .photo {
+    width: 34mm; height: 34mm;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid #E11D48;
+    display: block;
+    margin: 2mm auto 6mm;
+  }
+  .side-section { margin-bottom: 6mm; }
+  .side-title {
+    font-size: 9.5pt; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1.4px; color: #fff;
+    border-bottom: 1.5px solid #E11D48;
+    padding-bottom: 1.5mm; margin-bottom: 3mm;
+  }
+  .contact-item { font-size: 7.8pt; color: #bbb; margin-bottom: 2mm; word-break: break-word; }
+  .contact-item b { color: #E11D48; display: block; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.8px; }
+  .skill-group { margin-bottom: 2.6mm; }
+  .skill-group b { color: #E11D48; font-size: 8.2pt; display: block; margin-bottom: 0.6mm; }
+  .skill-group span { font-size: 8pt; color: #ccc; }
+  .soft li, .lang li { list-style: none; font-size: 8.2pt; color: #ccc; margin-bottom: 1.6mm; padding-left: 4mm; position: relative; }
+  .soft li::before, .lang li::before { content: ''; position: absolute; left: 0; top: 1.6mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: #E11D48; }
+  .lang small { color: #888; display: block; font-size: 7.2pt; }
+
+  /* ── Main content ────────────────────────── */
+  .main { flex: 1; padding: 10mm 9mm 8mm; }
+  h1 { font-size: 23pt; font-weight: 800; color: #111; letter-spacing: 0.5px; line-height: 1.05; }
+  .jobtitle { font-size: 11pt; font-weight: 700; color: #E11D48; margin-top: 1.5mm; }
+  .tagline { font-size: 8.8pt; color: #666; font-style: italic; margin-top: 1.5mm; }
+  .main-section { margin-top: 6mm; }
+  .main-title {
+    font-size: 11pt; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1.4px; color: #111;
+    border-left: 4px solid #E11D48; padding-left: 3mm;
+    margin-bottom: 3.5mm;
+  }
+  .exp { margin-bottom: 4mm; }
+  .exp-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .exp-role { font-size: 9.6pt; font-weight: 700; color: #111; }
+  .exp-org { font-size: 8.8pt; font-weight: 700; color: #E11D48; }
+  .exp-date { font-size: 7.8pt; color: #777; font-style: italic; white-space: nowrap; }
+  .exp ul { margin: 1.5mm 0 0 4.5mm; }
+  .exp li { margin-bottom: 1.2mm; color: #333; }
+  .exp li::marker { color: #E11D48; }
+  .edu-item { margin-bottom: 2.8mm; }
+  .edu-item .degree { font-weight: 700; color: #111; }
+  .edu-item .school { color: #666; font-size: 8.2pt; }
+  .edu-item .mention { color: #E11D48; font-weight: 700; font-size: 8.2pt; }
+  .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 5mm; }
+  .cert-grid div { font-size: 8.4pt; color: #333; padding-left: 4mm; position: relative; }
+  .cert-grid div::before { content: ''; position: absolute; left: 0; top: 1.5mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: #E11D48; }
+  .cert-grid small { color: #888; font-style: italic; }
 </style>
 </head>
 <body>
 
-<header>
+<aside class="sidebar">
+  <img class="photo" src="https://res.cloudinary.com/dxwcrbqes/image/upload/f_auto,q_auto,w_400/v1776363788/Portofolio/profil_hy3dbi.png" alt="Dieuleveut Ngele" />
+
+  <div class="side-section">
+    <div class="side-title">Contact</div>
+    <div class="contact-item"><b>Phone</b>+243 824 045 533</div>
+    <div class="contact-item"><b>Email</b>dieuleveutngele@gmail.com</div>
+    <div class="contact-item"><b>Location</b>Kinshasa, DRC</div>
+    <div class="contact-item"><b>GitHub</b>github.com/Dieuleveut-Ngele</div>
+    <div class="contact-item"><b>LinkedIn</b>linkedin.com/in/dieuleveut-ngele-767889282</div>
+  </div>
+
+  <div class="side-section">
+    <div class="side-title">Skills</div>
+    <div class="skill-group"><b>Frontend</b><span>JavaScript · TypeScript · React · Angular · Next.js · HTML5/CSS3 · Tailwind CSS · Bootstrap</span></div>
+    <div class="skill-group"><b>Design</b><span>UI/UX · Figma</span></div>
+    <div class="skill-group"><b>Backend &amp; API</b><span>Node.js · Express · REST APIs · Postman · JSON/XML · OAuth</span></div>
+    <div class="skill-group"><b>Databases</b><span>SQL Server · MySQL · PostgreSQL · MongoDB · Merise</span></div>
+    <div class="skill-group"><b>Tools</b><span>Git · GitHub · Bitbucket · WordPress</span></div>
+    <div class="skill-group"><b>Chatbots &amp; AI</b><span>Botpress · Stack AI · Voiceflow</span></div>
+    <div class="skill-group"><b>Project management</b><span>Agile · Scrum</span></div>
+  </div>
+
+  <div class="side-section">
+    <div class="side-title">Strengths</div>
+    <ul class="soft">
+      <li>Teamwork</li>
+      <li>Adaptability</li>
+      <li>Sense of responsibility</li>
+    </ul>
+  </div>
+
+  <div class="side-section">
+    <div class="side-title">Languages</div>
+    <ul class="lang">
+      <li>French<small>Full professional proficiency</small></li>
+      <li>English<small>Technical — documentation</small></li>
+      <li>Lingala<small>Native</small></li>
+    </ul>
+  </div>
+</aside>
+
+<main class="main">
   <h1>Dieuleveut Ngele</h1>
-  <div class="jobtitle">Backend Java / Full-Stack Developer — API Integration &amp; Databases</div>
-  <div class="contact">
-    <span>Kinshasa, DRC</span>
-    <span>+243 824 045 533</span>
-    <span>dieuleveutngele@gmail.com</span>
-    <span>github.com/Dieuleveut-Ngele</span>
-    <span>linkedin.com/in/dieuleveut-ngele-767889282</span>
-  </div>
-</header>
+  <div class="jobtitle">Frontend Developer — JavaScript · TypeScript · React</div>
+  <div class="tagline">Creative and passionate, I turn ideas into innovative web applications.</div>
 
-<section>
-  <h2>Professional Summary</h2>
-  <p>
-    Full-stack developer with 2+ years of experience, specializing in money-transfer API
-    integration (RIA, MoneyGram, Western Union) and Java / Java EE backend development.
-    Strong hands-on practice of API testing and documentation with Postman, and of Oracle,
-    PostgreSQL and SQL Server databases.
-  </p>
-</section>
+  <section class="main-section">
+    <div class="main-title">Profile</div>
+    <p>
+      Frontend developer with 2+ years of experience, specializing in JavaScript, TypeScript
+      and React. I build modern, high-performance interfaces, with strong hands-on practice of
+      money-transfer API integration (RIA, MoneyGram, Western Union), API testing with Postman,
+      and relational and NoSQL databases.
+    </p>
+  </section>
 
-<section class="skills">
-  <h2>Technical Skills</h2>
-  <p><b>Backend:</b> Java, Java EE, Node.js, Express, WildFly, REST APIs</p>
-  <p><b>Frontend:</b> React, Angular, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS</p>
-  <p><b>Databases:</b> Oracle, PostgreSQL, SQL Server, MySQL, MongoDB, Merise data modeling</p>
-  <p><b>API integration &amp; testing:</b> Postman, JSON, XML, OAuth, technical documentation</p>
-  <p><b>Tools:</b> Git, GitHub, Bitbucket, Figma, Agile/Scrum methodologies</p>
-</section>
+  <section class="main-section">
+    <div class="main-title">Professional Experience</div>
 
-<section>
-  <h2>Professional Experience</h2>
-
-  <div class="exp-head">
-    <div>
-      <span class="exp-role">Full-Stack Developer — API Integration</span><br />
+    <div class="exp">
+      <div class="exp-head">
+        <span class="exp-role">Frontend Developer — API Integration</span>
+        <span class="exp-date">June 2024 – Present</span>
+      </div>
       <span class="exp-org">Flash International, Kinshasa</span>
+      <ul>
+        <li><b>RIA Money Transfer:</b> integrated the send-money journey — OAuth authentication, authorized countries, delivery methods, payout partners, Amounts &amp; Requirements, Draft Order, data validation; Cash Pickup, Bank Deposit and Mobile Wallet flows.</li>
+        <li><b>Flash Scan:</b> centralized in-house identity-document scanning solution, reused across the MoneyGram, Western Union, RIA, Mukuru and Taptap Send journeys — replacing the legacy mechanism and improving the operator experience.</li>
+        <li>Postman collections and partner API test suites: RIA, Western Union, MoneyGram, Taptap Send, TerraPay, ZeePay, Swiss Remit, Mukuru, Mobile Money.</li>
+        <li>Authored technical documentation for partner APIs.</li>
+        <li>Internal user-documentation application (Angular, TypeScript, SCSS); Figma mockups and UX redesign of the FlashApp mobile application.</li>
+      </ul>
     </div>
-    <span class="exp-date">June 2024 – Present</span>
-  </div>
-  <ul>
-    <li><b>RIA Money Transfer:</b> integrated the end-to-end send-money journey — OAuth authentication, retrieval of authorized countries, delivery methods, payout partners, Amounts &amp; Requirements, Draft Order, transaction data validation; Cash Pickup, Bank Deposit and Mobile Wallet flows.</li>
-    <li><b>Flash Scan:</b> designed and integrated a centralized in-house identity-document scanning solution, reused across the MoneyGram, Western Union, RIA, Mukuru and Taptap Send journeys — replacing the legacy mechanism and improving the operator experience.</li>
-    <li>Built and maintained Postman collections and partner API test suites: RIA, Western Union, MoneyGram, Taptap Send, TerraPay, ZeePay, Swiss Remit, Mukuru, Mobile Money.</li>
-    <li>Authored technical documentation for partner APIs.</li>
-    <li>Developed an internal user-documentation application (Angular, TypeScript, SCSS).</li>
-    <li>Designed Figma mockups and prototypes; UX redesign of the FlashApp mobile application.</li>
-  </ul>
 
-  <div class="exp-head">
-    <div>
-      <span class="exp-role">Full-Stack Developer (project)</span><br />
+    <div class="exp">
+      <div class="exp-head">
+        <span class="exp-role">Full-Stack Developer (project)</span>
+        <span class="exp-date">Oct. 2024 – Nov. 2024</span>
+      </div>
       <span class="exp-org">Agro Connect, Kinshasa</span>
+      <ul>
+        <li>Web platform connecting stakeholders of the agricultural value chain (React, JavaScript, Tailwind CSS, MongoDB).</li>
+      </ul>
     </div>
-    <span class="exp-date">Oct. 2024 – Nov. 2024</span>
-  </div>
-  <ul>
-    <li>Web platform connecting stakeholders of the agricultural value chain (React, JavaScript, Tailwind CSS, MongoDB).</li>
-  </ul>
 
-  <div class="exp-head">
-    <div>
-      <span class="exp-role">Developer — Conversational Chatbot</span><br />
+    <div class="exp">
+      <div class="exp-head">
+        <span class="exp-role">Developer — Conversational Chatbot</span>
+        <span class="exp-date">Jan. 2024 – Feb. 2024</span>
+      </div>
       <span class="exp-org">Muzikin Distribution, Kinshasa</span>
+      <ul>
+        <li>Designed and implemented a conversational chatbot (Botpress, Stack AI) with configured conversation flows.</li>
+      </ul>
     </div>
-    <span class="exp-date">Jan. 2024 – Feb. 2024</span>
-  </div>
-  <ul>
-    <li>Designed and implemented a conversational chatbot (Botpress, Stack AI) with conversation flows configured for smooth user interaction.</li>
-  </ul>
-</section>
+  </section>
 
-<section>
-  <h2>Education</h2>
-  <div class="edu-item">
-    <span class="degree">Bac+3 (3-year post-secondary degree) — Network Administration &amp; Database Management</span><br />
-    <span class="school">ESMICOM, Kinshasa · 2019 – 2022</span> · <span class="mention">With Distinction</span>
-  </div>
-  <div class="edu-item">
-    <span class="degree">Bac+2 (2-year post-secondary degree) — Web &amp; Mobile Development</span><br />
-    <span class="school">Kadea Academy (Simplon), Kinshasa · 2023 – 2024</span>
-  </div>
-  <div class="edu-item">
-    <span class="degree">Project Management</span><br />
-    <span class="school">Phila-Cité d'Exaucement, Kinshasa · 2023</span>
-  </div>
-</section>
+  <section class="main-section">
+    <div class="main-title">Education</div>
+    <div class="edu-item">
+      <span class="degree">Bac+3 (3-year post-secondary degree) — Network Administration &amp; Database Management</span><br />
+      <span class="school">ESMICOM, Kinshasa · 2019 – 2022</span> · <span class="mention">With Distinction</span>
+    </div>
+    <div class="edu-item">
+      <span class="degree">Bac+2 (2-year post-secondary degree) — Web &amp; Mobile Development</span><br />
+      <span class="school">Kadea Academy (Simplon), Kinshasa · 2023 – 2024</span>
+    </div>
+    <div class="edu-item">
+      <span class="degree">Project Management</span><br />
+      <span class="school">Phila-Cité d'Exaucement, Kinshasa · 2023</span>
+    </div>
+  </section>
 
-<section>
-  <h2>Certifications — IBM</h2>
-  <ul class="cert-grid">
-    <li>Artificial Intelligence Fundamentals <span class="badge-note">(verifiable badge — Credly)</span></li>
-    <li>Applied Data Science with Python <span class="badge-note">(verifiable badge — Credly)</span></li>
-    <li>Data Analysis with Python</li>
-    <li>Data Visualization with Python</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Languages</h2>
-  <p>French — full professional proficiency · English — technical (reading and writing technical documentation) · Lingala — native</p>
-</section>
+  <section class="main-section">
+    <div class="main-title">Certifications — IBM</div>
+    <div class="cert-grid">
+      <div>Artificial Intelligence Fundamentals <small>(Credly badge)</small></div>
+      <div>Applied Data Science with Python <small>(Credly badge)</small></div>
+      <div>Data Analysis with Python</div>
+      <div>Data Visualization with Python</div>
+    </div>
+  </section>
+</main>
 
 </body>
 </html>
